@@ -1,4 +1,4 @@
-/* github.com/wuqb2i4f/xray-config-toolkit - v1.4.1 */
+/* github.com/w565612583/xray-config-toolkit - v1.4.1 */
 
 export default {
   async fetch(request, env, ctx) {
