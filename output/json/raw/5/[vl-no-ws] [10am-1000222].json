@@ -45,13 +45,13 @@
       "settings": {
         "vnext": [
           {
-            "address": "47.243.243.14",
-            "port": 80,
+            "address": "190.93.247.56",
+            "port": 8080,
             "users": [
               {
                 "encryption": "none",
                 "flow": "",
-                "id": "d342d11e-d424-4583-b36e-524ab1f0afa4",
+                "id": "947dfefb-9669-4509-8b06-f5c0383c67ed",
                 "level": 8,
                 "security": "auto"
               }
@@ -63,9 +63,9 @@
         "network": "ws",
         "wsSettings": {
           "headers": {
-            "Host": "a.ssll.gay"
+            "Host": "legendaryking.ir.www.speedtest.net.www.zula.ir.cloudflare.com.mozdozari.bUzz."
           },
-          "path": "Telegram🇨🇳+@WangCai_8+/?ed=2048"
+          "path": "/telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers?ed=2560"
         },
         "security": "none"
       },

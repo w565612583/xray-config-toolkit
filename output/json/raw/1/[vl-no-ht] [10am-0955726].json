@@ -45,13 +45,13 @@
       "settings": {
         "vnext": [
           {
-            "address": "chanel-sn.lavazemkhoshina.ir",
-            "port": 46101,
+            "address": "www.parspack.com",
+            "port": 8080,
             "users": [
               {
                 "encryption": "none",
                 "flow": "",
-                "id": "8cee3937-8acb-4d52-e153-7db5faa62a5f",
+                "id": "02e7c06c-5559-45a4-9586-63ef815a66e9",
                 "level": 8,
                 "security": "auto"
               }
@@ -60,21 +60,12 @@
         ]
       },
       "streamSettings": {
-        "network": "grpc",
-        "grpcSettings": {
-          "multiMode": false,
-          "serviceName": ""
+        "network": "httpupgrade",
+        "httpupgradeSettings": {
+            "host": "MDvpnsec-mdvpnSEC-MDvpnsec.PlusFood.org.",
+            "path": "/MdVpnSec?ed=2048"
         },
-        "security": "reality",
-        "realitySettings": {
-          "allowInsecure": false,
-          "fingerprint": "chrome",
-          "publicKey": "DPzR_HeOcmpnM-TkuGNxoKM4oa6qWmexemmeoOksfU8",
-          "serverName": "help.mega.io",
-          "shortId": "",
-          "show": false,
-          "spiderX": ""
-        }
+        "security": "none"
       },
       "tag": "proxy"
     },

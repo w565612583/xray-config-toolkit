@@ -45,13 +45,13 @@
       "settings": {
         "vnext": [
           {
-            "address": "speedtest.net",
+            "address": "104.25.164.167",
             "port": 443,
             "users": [
               {
                 "encryption": "none",
                 "flow": "",
-                "id": "SVNTEAM14",
+                "id": "c6d299d4-db0b-4444-8b56-b23bbdcbcd67",
                 "level": 8,
                 "security": "auto"
               }
@@ -63,16 +63,16 @@
         "network": "ws",
         "wsSettings": {
           "headers": {
-            "Host": "Speed.Site"
+            "Host": "BPB-a-montH-aFTER-July.pAGeS.dEV"
           },
-          "path": "/SVNTEAM,PROVIP,SVNTEAM?ed=1024"
+          "path": "/RaCVjPY5k7jy2rTZ?ed=2560"
         },
         "security": "tls",
         "tlsSettings": {
           "allowInsecure": false,
           "alpn": ["h2,http/1.1"],
-          "fingerprint": "firefox",
-          "serverName": "speedtest.net",
+          "fingerprint": "randomized",
+          "serverName": "BpB-a-monTh-AfTEr-jUly.paGeS.Dev",
           "show": false
         }
       },
