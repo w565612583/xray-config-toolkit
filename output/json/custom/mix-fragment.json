@@ -1,0 +1,3245 @@
+[
+  {
+    "remarks": "[us] [vl-tl-ws] [09am-0501116]",
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com"
+      },
+      "servers": [
+        "1.1.1.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": false
+        },
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "zula.ir",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "",
+                  "id": "c6d299d4-db0b-4444-8b56-b23bbdcbcd67",
+                  "level": 8,
+                  "security": "auto"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          },
+          "network": "ws",
+          "wsSettings": {
+            "headers": {
+              "Host": "BPB-a-montH-aFTER-July.pAGeS.dEV"
+            },
+            "path": "/RaCVjPY5k7jy2rTZ?ed=2560"
+          },
+          "security": "tls",
+          "tlsSettings": {
+            "allowInsecure": false,
+            "alpn": [
+              "h2,http/1.1"
+            ],
+            "fingerprint": "randomized",
+            "serverName": "BpB-a-monTh-AfTEr-jUly.paGeS.Dev",
+            "show": false
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "5-30",
+            "interval": "10-20"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "TcpNoDelay": true,
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          }
+        },
+        "tag": "fragment"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {},
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53"
+        },
+        {
+          "ip": [
+            "223.5.5.5"
+          ],
+          "outboundTag": "direct",
+          "port": "53"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ir",
+            "ext:iran.dat:other"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ir"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ads"
+          ],
+          "outboundTag": "block"
+        },
+        {
+          "outboundTag": "proxy",
+          "port": "0-65535"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "[us] [vm-no-ws] [09am-0503327]",
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com"
+      },
+      "servers": [
+        "1.1.1.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": false
+        },
+        "protocol": "vmess",
+        "settings": {
+          "vnext": [
+            {
+              "address": "zula.ir",
+              "port": 2086,
+              "users": [
+                {
+                  "alterId": 0,
+                  "encryption": "",
+                  "flow": "",
+                  "id": "29eebb60-b27b-4a9d-bba5-947763d9205e",
+                  "level": 8,
+                  "security": "auto"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          },
+          "network": "ws",
+          "wsSettings": {
+            "headers": {
+              "Host": "ip005.dtku47.xyz"
+            },
+            "path": "github.com/Alvin9999"
+          },
+          "security": "none"
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "1-1",
+            "length": "3-5",
+            "interval": "5"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "TcpNoDelay": true,
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          }
+        },
+        "tag": "fragment"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {},
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53"
+        },
+        {
+          "ip": [
+            "223.5.5.5"
+          ],
+          "outboundTag": "direct",
+          "port": "53"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ir",
+            "ext:iran.dat:other"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ir"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ads"
+          ],
+          "outboundTag": "block"
+        },
+        {
+          "outboundTag": "proxy",
+          "port": "0-65535"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "[sg] [vm-no-ws] [09am-0503943]",
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com"
+      },
+      "servers": [
+        "1.1.1.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": false
+        },
+        "protocol": "vmess",
+        "settings": {
+          "vnext": [
+            {
+              "address": "zula.ir",
+              "port": 80,
+              "users": [
+                {
+                  "alterId": 0,
+                  "encryption": "",
+                  "flow": "",
+                  "id": "ee92bd8b-04cd-4b48-bafb-390801194eb4",
+                  "level": 8,
+                  "security": "auto"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          },
+          "network": "ws",
+          "wsSettings": {
+            "headers": {
+              "Host": "99806388192980142300309475767578.chrsjfklsdjfkljoierfdjklfjlkefeojsdlkfjeoifjsdlkfjweoifjlsdchrs.cyou"
+            },
+            "path": "/V2LINE-TELEGRAM-CHANNEL-VMESS-WS"
+          },
+          "security": "none"
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "1-1",
+            "length": "3-5",
+            "interval": "5"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "TcpNoDelay": true,
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          }
+        },
+        "tag": "fragment"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {},
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53"
+        },
+        {
+          "ip": [
+            "223.5.5.5"
+          ],
+          "outboundTag": "direct",
+          "port": "53"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ir",
+            "ext:iran.dat:other"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ir"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ads"
+          ],
+          "outboundTag": "block"
+        },
+        {
+          "outboundTag": "proxy",
+          "port": "0-65535"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "[ua] [vl-no-ws] [09am-0452979]",
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com"
+      },
+      "servers": [
+        "1.1.1.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": false
+        },
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "zula.ir",
+              "port": 8880,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "",
+                  "id": "a82dd080-ea8c-4a99-8acc-59aa16cede6e",
+                  "level": 8,
+                  "security": "auto"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          },
+          "network": "ws",
+          "wsSettings": {
+            "headers": {
+              "Host": "www.speedtest.net.A.lightning-6.LiVE."
+            },
+            "path": "/-LiV2ry@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL-@LIGHTNING6-TEL--@LIGHTNING6-JOIN-@LIGHTNING6-TEL--@LIGHTNING6?ed=2056"
+          },
+          "security": "none"
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "1-1",
+            "length": "3-5",
+            "interval": "5"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "TcpNoDelay": true,
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          }
+        },
+        "tag": "fragment"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {},
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53"
+        },
+        {
+          "ip": [
+            "223.5.5.5"
+          ],
+          "outboundTag": "direct",
+          "port": "53"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ir",
+            "ext:iran.dat:other"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ir"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ads"
+          ],
+          "outboundTag": "block"
+        },
+        {
+          "outboundTag": "proxy",
+          "port": "0-65535"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "[us] [vm-no-ws] [09am-0503553]",
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com"
+      },
+      "servers": [
+        "1.1.1.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": false
+        },
+        "protocol": "vmess",
+        "settings": {
+          "vnext": [
+            {
+              "address": "zula.ir",
+              "port": 80,
+              "users": [
+                {
+                  "alterId": 0,
+                  "encryption": "",
+                  "flow": "",
+                  "id": "c0f3f890-d329-42fc-8311-16ae31c22c6b",
+                  "level": 8,
+                  "security": "auto"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          },
+          "network": "ws",
+          "wsSettings": {
+            "headers": {
+              "Host": "68690907783461163508239105253758.chrsjfklsdjfkljoierfdjklfjlkefeojsdlkfjeoifjsdlkfjweoifjlsdchrs.cyou"
+            },
+            "path": "/V2LINE-TELEGRAM-CHANNEL-VMESS-WS"
+          },
+          "security": "none"
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "1-1",
+            "length": "3-5",
+            "interval": "5"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "TcpNoDelay": true,
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          }
+        },
+        "tag": "fragment"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {},
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53"
+        },
+        {
+          "ip": [
+            "223.5.5.5"
+          ],
+          "outboundTag": "direct",
+          "port": "53"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ir",
+            "ext:iran.dat:other"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ir"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ads"
+          ],
+          "outboundTag": "block"
+        },
+        {
+          "outboundTag": "proxy",
+          "port": "0-65535"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "[de] [vl-tl-ws] [09am-0459943]",
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com"
+      },
+      "servers": [
+        "1.1.1.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": false
+        },
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "zula.ir",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "",
+                  "id": "a218a675-60e4-4c61-b65b-fd565c400dc9",
+                  "level": 8,
+                  "security": "auto"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          },
+          "network": "ws",
+          "wsSettings": {
+            "headers": {
+              "Host": "rsfndc1.cpiforpersia.uk"
+            },
+            "path": "/2sg8k6ktNBzuCJc1eh1994"
+          },
+          "security": "tls",
+          "tlsSettings": {
+            "allowInsecure": false,
+            "alpn": [
+              "http/1.1"
+            ],
+            "fingerprint": "chrome",
+            "serverName": "rsfndc1.cpiforpersia.uk",
+            "show": false
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "5-30",
+            "interval": "10-20"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "TcpNoDelay": true,
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          }
+        },
+        "tag": "fragment"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {},
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53"
+        },
+        {
+          "ip": [
+            "223.5.5.5"
+          ],
+          "outboundTag": "direct",
+          "port": "53"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ir",
+            "ext:iran.dat:other"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ir"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ads"
+          ],
+          "outboundTag": "block"
+        },
+        {
+          "outboundTag": "proxy",
+          "port": "0-65535"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "[de] [vm-no-ws] [09am-0503888]",
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com"
+      },
+      "servers": [
+        "1.1.1.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": false
+        },
+        "protocol": "vmess",
+        "settings": {
+          "vnext": [
+            {
+              "address": "zula.ir",
+              "port": 80,
+              "users": [
+                {
+                  "alterId": 0,
+                  "encryption": "",
+                  "flow": "",
+                  "id": "947cb385-54b4-4453-ac92-63c95ef32a6a",
+                  "level": 8,
+                  "security": "auto"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          },
+          "network": "ws",
+          "wsSettings": {
+            "headers": {
+              "Host": "39238319310964543920519489701900.chrsjfklsdjfkljoierfdjklfjlkefeojsdlkfjeoifjsdlkfjweoifjlsdchrs.cyou"
+            },
+            "path": "/V2LINE-TELEGRAM-CHANNEL-VMESS-WS"
+          },
+          "security": "none"
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "1-1",
+            "length": "3-5",
+            "interval": "5"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "TcpNoDelay": true,
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          }
+        },
+        "tag": "fragment"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {},
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53"
+        },
+        {
+          "ip": [
+            "223.5.5.5"
+          ],
+          "outboundTag": "direct",
+          "port": "53"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ir",
+            "ext:iran.dat:other"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ir"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ads"
+          ],
+          "outboundTag": "block"
+        },
+        {
+          "outboundTag": "proxy",
+          "port": "0-65535"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "[nl] [vl-no-ws] [09am-0453199]",
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com"
+      },
+      "servers": [
+        "1.1.1.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": false
+        },
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "zula.ir",
+              "port": 80,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "",
+                  "id": "dfd1ba6a-8561-44c9-9cd9-e796b1f7f646",
+                  "level": 8,
+                  "security": "auto"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          },
+          "network": "ws",
+          "wsSettings": {
+            "headers": {
+              "Host": "shhproxy.com.www.speedtest.net.www.zula.ir.cloudflare.com.mozdfree.bUzz."
+            },
+            "path": "/telegram-@Shh_Proxy-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy?ed=2560"
+          },
+          "security": "none"
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "1-1",
+            "length": "3-5",
+            "interval": "5"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "TcpNoDelay": true,
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          }
+        },
+        "tag": "fragment"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {},
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53"
+        },
+        {
+          "ip": [
+            "223.5.5.5"
+          ],
+          "outboundTag": "direct",
+          "port": "53"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ir",
+            "ext:iran.dat:other"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ir"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ads"
+          ],
+          "outboundTag": "block"
+        },
+        {
+          "outboundTag": "proxy",
+          "port": "0-65535"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "[de] [vl-no-ws] [09am-0453287]",
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com"
+      },
+      "servers": [
+        "1.1.1.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": false
+        },
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "zula.ir",
+              "port": 8080,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "",
+                  "id": "telegram-id-ArV2ray",
+                  "level": 8,
+                  "security": "auto"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          },
+          "network": "ws",
+          "wsSettings": {
+            "headers": {
+              "Host": "7.www.speedtest.net.I.bahrane.iR."
+            },
+            "path": "/telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry,telegram-ArV2ry?ed=8080"
+          },
+          "security": "none"
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "1-1",
+            "length": "3-5",
+            "interval": "5"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "TcpNoDelay": true,
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          }
+        },
+        "tag": "fragment"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {},
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53"
+        },
+        {
+          "ip": [
+            "223.5.5.5"
+          ],
+          "outboundTag": "direct",
+          "port": "53"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ir",
+            "ext:iran.dat:other"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ir"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ads"
+          ],
+          "outboundTag": "block"
+        },
+        {
+          "outboundTag": "proxy",
+          "port": "0-65535"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "[de] [vl-no-ws] [09am-0452757]",
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com"
+      },
+      "servers": [
+        "1.1.1.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": false
+        },
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "zula.ir",
+              "port": 8080,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "",
+                  "id": "6306f288-a5f5-4886-8e6d-944d1a951cfd",
+                  "level": 8,
+                  "security": "auto"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          },
+          "network": "ws",
+          "wsSettings": {
+            "headers": {
+              "Host": "lc10.lebasnoo.ir."
+            },
+            "path": "/servernett"
+          },
+          "security": "none"
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "1-1",
+            "length": "3-5",
+            "interval": "5"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "TcpNoDelay": true,
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          }
+        },
+        "tag": "fragment"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {},
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53"
+        },
+        {
+          "ip": [
+            "223.5.5.5"
+          ],
+          "outboundTag": "direct",
+          "port": "53"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ir",
+            "ext:iran.dat:other"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ir"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ads"
+          ],
+          "outboundTag": "block"
+        },
+        {
+          "outboundTag": "proxy",
+          "port": "0-65535"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "[de] [vl-no-ws] [09am-0458125]",
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com"
+      },
+      "servers": [
+        "1.1.1.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": false
+        },
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "zula.ir",
+              "port": 8080,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "",
+                  "id": "947dfefb-9669-4509-8b06-f5c0383c67ed",
+                  "level": 8,
+                  "security": "auto"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          },
+          "network": "ws",
+          "wsSettings": {
+            "headers": {
+              "Host": "legendaryking.ir.www.speedtest.net.www.zula.ir.cloudflare.com.mozdozari.bUzz."
+            },
+            "path": "/telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers?ed=2560"
+          },
+          "security": "none"
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "1-1",
+            "length": "3-5",
+            "interval": "5"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "TcpNoDelay": true,
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          }
+        },
+        "tag": "fragment"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {},
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53"
+        },
+        {
+          "ip": [
+            "223.5.5.5"
+          ],
+          "outboundTag": "direct",
+          "port": "53"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ir",
+            "ext:iran.dat:other"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ir"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ads"
+          ],
+          "outboundTag": "block"
+        },
+        {
+          "outboundTag": "proxy",
+          "port": "0-65535"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "[fr] [vm-no-ws] [09am-0503831]",
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com"
+      },
+      "servers": [
+        "1.1.1.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": false
+        },
+        "protocol": "vmess",
+        "settings": {
+          "vnext": [
+            {
+              "address": "zula.ir",
+              "port": 80,
+              "users": [
+                {
+                  "alterId": 0,
+                  "encryption": "",
+                  "flow": "",
+                  "id": "2c4d6f66-2966-49c1-93aa-a7192ba8f8fc",
+                  "level": 8,
+                  "security": "auto"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          },
+          "network": "ws",
+          "wsSettings": {
+            "headers": {
+              "Host": "73012792103530616183052842717949.chrsjfklsdjfkljoierfdjklfjlkefeojsdlkfjeoifjsdlkfjweoifjlsdchrs.cyou"
+            },
+            "path": "/V2LINE-TELEGRAM-CHANNEL-VMESS-WS"
+          },
+          "security": "none"
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "1-1",
+            "length": "3-5",
+            "interval": "5"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "TcpNoDelay": true,
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          }
+        },
+        "tag": "fragment"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {},
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53"
+        },
+        {
+          "ip": [
+            "223.5.5.5"
+          ],
+          "outboundTag": "direct",
+          "port": "53"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ir",
+            "ext:iran.dat:other"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ir"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ads"
+          ],
+          "outboundTag": "block"
+        },
+        {
+          "outboundTag": "proxy",
+          "port": "0-65535"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "[nl] [vl-no-ws] [09am-0501921]",
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com"
+      },
+      "servers": [
+        "1.1.1.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": false
+        },
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "zula.ir",
+              "port": 80,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "",
+                  "id": "dfd1ba6a-8561-44c9-9cd9-e796b1f7f646",
+                  "level": 8,
+                  "security": "auto"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          },
+          "network": "ws",
+          "wsSettings": {
+            "headers": {
+              "Host": "shhproxy.com.www.speedtest.net.www.zula.ir.cloudflare.com.mozdfree.bUzz."
+            },
+            "path": "/telegram-@Shh_Proxy-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy,telegram-@Shh_Proxy?ed=2560"
+          },
+          "security": "none"
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "1-1",
+            "length": "3-5",
+            "interval": "5"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "TcpNoDelay": true,
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          }
+        },
+        "tag": "fragment"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {},
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53"
+        },
+        {
+          "ip": [
+            "223.5.5.5"
+          ],
+          "outboundTag": "direct",
+          "port": "53"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ir",
+            "ext:iran.dat:other"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ir"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ads"
+          ],
+          "outboundTag": "block"
+        },
+        {
+          "outboundTag": "proxy",
+          "port": "0-65535"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "[us] [vl-tl-ws] [09am-0500623]",
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com"
+      },
+      "servers": [
+        "1.1.1.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": false
+        },
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "zula.ir",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "",
+                  "id": "b9005145-03d3-47bd-b975-b70f55882e77",
+                  "level": 8,
+                  "security": "auto"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          },
+          "network": "ws",
+          "wsSettings": {
+            "headers": {
+              "Host": "ShAH-AGZ.PAGES.dEV"
+            },
+            "path": "/Telegram@V2ray_Alpha/?ed=2048"
+          },
+          "security": "tls",
+          "tlsSettings": {
+            "allowInsecure": false,
+            "alpn": [
+              "h2,http/1.1"
+            ],
+            "fingerprint": "chrome",
+            "serverName": "ShAh-aGz.pAGes.DEV",
+            "show": false
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "5-30",
+            "interval": "10-20"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "TcpNoDelay": true,
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          }
+        },
+        "tag": "fragment"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {},
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53"
+        },
+        {
+          "ip": [
+            "223.5.5.5"
+          ],
+          "outboundTag": "direct",
+          "port": "53"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ir",
+            "ext:iran.dat:other"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ir"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ads"
+          ],
+          "outboundTag": "block"
+        },
+        {
+          "outboundTag": "proxy",
+          "port": "0-65535"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "[us] [vm-no-ws] [09am-0503498]",
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com"
+      },
+      "servers": [
+        "1.1.1.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": false
+        },
+        "protocol": "vmess",
+        "settings": {
+          "vnext": [
+            {
+              "address": "zula.ir",
+              "port": 2086,
+              "users": [
+                {
+                  "alterId": 0,
+                  "encryption": "",
+                  "flow": "",
+                  "id": "e9e3cc13-db48-4cc1-8c24-7626439a5339",
+                  "level": 8,
+                  "security": "auto"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          },
+          "network": "ws",
+          "wsSettings": {
+            "headers": {
+              "Host": "ip14.freegradely.xyz"
+            },
+            "path": "github.com/Alvin9999"
+          },
+          "security": "none"
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "1-1",
+            "length": "3-5",
+            "interval": "5"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "TcpNoDelay": true,
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          }
+        },
+        "tag": "fragment"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {},
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53"
+        },
+        {
+          "ip": [
+            "223.5.5.5"
+          ],
+          "outboundTag": "direct",
+          "port": "53"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ir",
+            "ext:iran.dat:other"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ir"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ads"
+          ],
+          "outboundTag": "block"
+        },
+        {
+          "outboundTag": "proxy",
+          "port": "0-65535"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "[tr] [vl-no-ws] [09am-0455074]",
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com"
+      },
+      "servers": [
+        "1.1.1.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": false
+        },
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "zula.ir",
+              "port": 8080,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "",
+                  "id": "39765ed6-a496-45f5-8df1-1ff40f471bf3",
+                  "level": 8,
+                  "security": "auto"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          },
+          "network": "ws",
+          "wsSettings": {
+            "headers": {
+              "Host": "legendaryking.ir.www.speedtest.net.www.zula.ir.cloudflare.com.tr.mozdozari.bUzz."
+            },
+            "path": "/telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers?ed=2560"
+          },
+          "security": "none"
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "1-1",
+            "length": "3-5",
+            "interval": "5"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "TcpNoDelay": true,
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          }
+        },
+        "tag": "fragment"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {},
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53"
+        },
+        {
+          "ip": [
+            "223.5.5.5"
+          ],
+          "outboundTag": "direct",
+          "port": "53"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ir",
+            "ext:iran.dat:other"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ir"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ads"
+          ],
+          "outboundTag": "block"
+        },
+        {
+          "outboundTag": "proxy",
+          "port": "0-65535"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "[gb] [vm-no-ws] [09am-0503609]",
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com"
+      },
+      "servers": [
+        "1.1.1.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": false
+        },
+        "protocol": "vmess",
+        "settings": {
+          "vnext": [
+            {
+              "address": "zula.ir",
+              "port": 80,
+              "users": [
+                {
+                  "alterId": 0,
+                  "encryption": "",
+                  "flow": "",
+                  "id": "f1fb28e5-e5b6-450c-972c-13235c94285c",
+                  "level": 8,
+                  "security": "auto"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          },
+          "network": "ws",
+          "wsSettings": {
+            "headers": {
+              "Host": "50907082685942059876387799824779.chrsjfklsdjfkljoierfdjklfjlkefeojsdlkfjeoifjsdlkfjweoifjlsdchrs.cyou"
+            },
+            "path": "/V2LINE-TELEGRAM-CHANNEL-VMESS-WS"
+          },
+          "security": "none"
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "1-1",
+            "length": "3-5",
+            "interval": "5"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "TcpNoDelay": true,
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          }
+        },
+        "tag": "fragment"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {},
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53"
+        },
+        {
+          "ip": [
+            "223.5.5.5"
+          ],
+          "outboundTag": "direct",
+          "port": "53"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ir",
+            "ext:iran.dat:other"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ir"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ads"
+          ],
+          "outboundTag": "block"
+        },
+        {
+          "outboundTag": "proxy",
+          "port": "0-65535"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "[de] [vl-no-ws] [09am-0452712]",
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com"
+      },
+      "servers": [
+        "1.1.1.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": false
+        },
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "zula.ir",
+              "port": 8080,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "",
+                  "id": "5c62a04e-8519-44bc-8cf9-2b883d981c1c",
+                  "level": 8,
+                  "security": "auto"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          },
+          "network": "ws",
+          "wsSettings": {
+            "headers": {
+              "Host": "lc11.lebasnoo.ir."
+            },
+            "path": "/servernett"
+          },
+          "security": "none"
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "1-1",
+            "length": "3-5",
+            "interval": "5"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "TcpNoDelay": true,
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          }
+        },
+        "tag": "fragment"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {},
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53"
+        },
+        {
+          "ip": [
+            "223.5.5.5"
+          ],
+          "outboundTag": "direct",
+          "port": "53"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ir",
+            "ext:iran.dat:other"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ir"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ads"
+          ],
+          "outboundTag": "block"
+        },
+        {
+          "outboundTag": "proxy",
+          "port": "0-65535"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "[us] [vl-tl-ws] [09am-0500846]",
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com"
+      },
+      "servers": [
+        "1.1.1.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": false
+        },
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "zula.ir",
+              "port": 443,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "",
+                  "id": "bcf50589-9654-4331-93a6-da896914ec47",
+                  "level": 8,
+                  "security": "auto"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          },
+          "network": "ws",
+          "wsSettings": {
+            "headers": {
+              "Host": "de4ecf6b.isvphp-4g8.pages.dev"
+            },
+            "path": "/?ed=2048"
+          },
+          "security": "tls",
+          "tlsSettings": {
+            "allowInsecure": false,
+            "alpn": [
+              ""
+            ],
+            "fingerprint": "randomized",
+            "serverName": "de4ecf6b.isvphp-4g8.pages.dev",
+            "show": false
+          }
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "tlshello",
+            "length": "5-30",
+            "interval": "10-20"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "TcpNoDelay": true,
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          }
+        },
+        "tag": "fragment"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {},
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53"
+        },
+        {
+          "ip": [
+            "223.5.5.5"
+          ],
+          "outboundTag": "direct",
+          "port": "53"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ir",
+            "ext:iran.dat:other"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ir"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ads"
+          ],
+          "outboundTag": "block"
+        },
+        {
+          "outboundTag": "proxy",
+          "port": "0-65535"
+        }
+      ]
+    }
+  },
+  {
+    "remarks": "[de] [vl-no-ws] [09am-0455166]",
+    "dns": {
+      "hosts": {
+        "domain:googleapis.cn": "googleapis.com"
+      },
+      "servers": [
+        "1.1.1.1"
+      ]
+    },
+    "inbounds": [
+      {
+        "listen": "127.0.0.1",
+        "port": 10808,
+        "protocol": "socks",
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "userLevel": 8
+        },
+        "sniffing": {
+          "destOverride": [
+            "http",
+            "tls"
+          ],
+          "enabled": true,
+          "routeOnly": false
+        },
+        "tag": "socks"
+      },
+      {
+        "listen": "127.0.0.1",
+        "port": 10809,
+        "protocol": "http",
+        "settings": {
+          "userLevel": 8
+        },
+        "tag": "http"
+      }
+    ],
+    "log": {
+      "loglevel": "warning"
+    },
+    "outbounds": [
+      {
+        "mux": {
+          "concurrency": 8,
+          "enabled": false
+        },
+        "protocol": "vless",
+        "settings": {
+          "vnext": [
+            {
+              "address": "zula.ir",
+              "port": 8080,
+              "users": [
+                {
+                  "encryption": "none",
+                  "flow": "",
+                  "id": "3fbe07e7-ee0d-4d5c-971a-f1d23f06ad1c",
+                  "level": 8,
+                  "security": "auto"
+                }
+              ]
+            }
+          ]
+        },
+        "streamSettings": {
+          "sockopt": {
+            "dialerProxy": "fragment",
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          },
+          "network": "ws",
+          "wsSettings": {
+            "headers": {
+              "Host": "legendaryking.ir.www.speedtest.net.www.zula.ir.cloudflare.com.de2.mozdozari.bUzz."
+            },
+            "path": "/telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers,telegram-@LegenderY_Servers?ed=2560"
+          },
+          "security": "none"
+        },
+        "tag": "proxy"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {
+          "fragment": {
+            "packets": "1-1",
+            "length": "3-5",
+            "interval": "5"
+          }
+        },
+        "streamSettings": {
+          "sockopt": {
+            "TcpNoDelay": true,
+            "tcpKeepAliveIdle": 100,
+            "mark": 255
+          }
+        },
+        "tag": "fragment"
+      },
+      {
+        "protocol": "freedom",
+        "settings": {},
+        "tag": "direct"
+      },
+      {
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
+        },
+        "tag": "block"
+      }
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "ip": [
+            "1.1.1.1"
+          ],
+          "outboundTag": "proxy",
+          "port": "53"
+        },
+        {
+          "ip": [
+            "223.5.5.5"
+          ],
+          "outboundTag": "direct",
+          "port": "53"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ir",
+            "ext:iran.dat:other"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "ip": [
+            "geoip:ir"
+          ],
+          "outboundTag": "direct"
+        },
+        {
+          "domain": [
+            "ext:iran.dat:ads"
+          ],
+          "outboundTag": "block"
+        },
+        {
+          "outboundTag": "proxy",
+          "port": "0-65535"
+        }
+      ]
+    }
+  }
+]
